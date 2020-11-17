@@ -41,3 +41,35 @@ export async function getStaticProps({ preview = false }) {
     props: { preview, allPosts },
   }
 }
+
+
+<div>
+<NewHero />
+<div className="mx-8 lg:mx-4">
+	<FirstPost key={posts[0].id} post={posts[0]} />
+</div>
+<div className="mx-8 mb-8 lg:mx-32 lg:grid lg:grid-cols-3 lg:gap-2">
+	{chunk(posts.slice(1, postsToShow), 4).map((chunk, i) => {
+		return (
+			<>
+				{chunk.map((node) => (
+					<PostListings key={node.id} post={node} />
+				))}
+			</>
+		)
+	})}
+</div>
+{!showingMore && (
+	<div className="text-center mt-8 mb-10 ">
+		<button
+			className="text-white bg-darkPurple py-2 px-24 rounded-md"
+			onClick={() => {
+				setpostsToShow(postsToShow + 6)
+				setshowingMore(true)
+			}}
+		>
+			Load More
+		</button>
+	</div>
+)}
+</div>
