@@ -19,7 +19,36 @@
 		"@fullhuman/postcss-purgecss": "^2.3.0",
 		"contentful-import": "^7.8.7",
 		"postcss-preset-env": "^6.7.0",
-		"tailwindcss": "^1.5.1"
+		"tailwindcss": "^1.5.1",
+		"eslint-plugin-html": "^6.1.1",
+		"standard": "^16.0.2"
+	},
+	"standard.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		{
+			"language": "html",
+			"autoFix": true
+		}
+	],
+	"standard.options": {
+		"globals": [
+			"$",
+			"jQuery",
+			"fetch"
+		],
+		"ignore": [
+			"node_modules/**"
+		],
+		"plugins": [
+			"html"
+		],
+		"parser": "babel-eslint",
+		"envs": [
+			"jest"
+		]
 	},
 	"license": "MIT"
 }

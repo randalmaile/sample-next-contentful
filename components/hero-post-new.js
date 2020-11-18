@@ -12,21 +12,19 @@ const HeroPost = ({
   excerpt,
   author,
 	slug,
-	content
 }) => {
 
-  return (
+  return ( 
     <div className="mx-4 mb-4 mt-8 z-0 lg:mx-32 ">
       <div className=" bg-white rounded-md lg:flex md:flex-none">
         <div className="flex-1">
 					<Link as={`/posts/${slug}`} href="/posts/[slug]">
 								<a className="hover:underline">
 									<Image
-										src="/logo.png"
-										alt="Sharp Logo"	
-										width={110}
-										height={35}
-										layout='intrinsic'
+										src={coverImage.url}
+										alt="post image"	
+										width={469}
+										height={263}
 									/>		
 								</a>
 					</Link>
@@ -39,8 +37,9 @@ const HeroPost = ({
             </h2>
 						</a>
           </Link>
-					<PostBody content={content} />
-          <DateComponent dateString={date} />
+					<div className="font-mont text-lg text-black antialiased">
+						{excerpt}</div>
+          <p className="mt-6 text-black font-mont antialiased"><DateComponent dateString={date} /></p>
         </div>
       </div>
     </div>
