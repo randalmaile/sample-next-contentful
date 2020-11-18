@@ -1,6 +1,6 @@
 module.exports = {
-	/* config options here */
-	images: {
-    domains: ['images.ctfassets.net'],
-  },
+  /* config options here */
+  images: {
+    domains: ['images.ctfassets.net']
+  }
 }

@@ -4,7 +4,6 @@ import Avatar from '../components/avatar'
 import DateComponent from '../components/date'
 import PostBody from '../components/post-body'
 
-
 const HeroPost = ({
   title,
   coverImage,
