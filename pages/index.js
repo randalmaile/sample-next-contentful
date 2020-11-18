@@ -1,7 +1,7 @@
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
+// import HeroPost from '../components/hero-post'
+import HeroPost from '../components/hero-post-new'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import Head from 'next/head'
@@ -17,7 +17,6 @@ export default function Index({ preview, allPosts }) {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          <Intro />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
@@ -25,7 +24,8 @@ export default function Index({ preview, allPosts }) {
               date={heroPost.date}
               author={heroPost.author}
               slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+							excerpt={heroPost.excerpt}
+							content={heroPost.content}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
@@ -43,7 +43,7 @@ export async function getStaticProps({ preview = false }) {
 }
 
 
-<div>
+{/* <div>
 <NewHero />
 <div className="mx-8 lg:mx-4">
 	<FirstPost key={posts[0].id} post={posts[0]} />
@@ -72,4 +72,4 @@ export async function getStaticProps({ preview = false }) {
 		</button>
 	</div>
 )}
-</div>
+</div> */}
