@@ -1,37 +1,48 @@
 import Link from 'next/link'
-import Avatar from '../components/avatar'
-import DateComponent from '../components/date'
-import CoverImage from '../components/cover-image'
+import Image from 'next/image'
+import Avatar from './avatar'
+import DateComponent from './date'
+import PostBody from './post-body'
 
-export default function HeroPost ({
+const HeroPost = ({
   title,
   coverImage,
   date,
   excerpt,
   author,
   slug
-}) {
+}) => {
   return (
-    <section>
-      <div className='mb-8 md:mb-16'>
-        <CoverImage title={title} slug={slug} url={coverImage.url} />
-      </div>
-      <div className='md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 mb-20 md:mb-28'>
-        <div>
-          <h3 className='mb-4 text-4xl lg:text-6xl leading-tight'>
-            <Link as={`/posts/${slug}`} href='/posts/[slug]'>
-              <a className='hover:underline'>{title}</a>
-            </Link>
-          </h3>
-          <div className='mb-4 md:mb-0 text-lg'>
-            <DateComponent dateString={date} />
+    <div className='mx-4 mb-4 mt-8 z-0 lg:mx-32'>
+      <div className=' bg-white rounded-md lg:flex md:flex-none'>
+        <div className='flex-1'>
+          <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+            <a>
+              <Image
+                src={coverImage.url}
+                alt='post image'
+                width={469}
+                height={263}
+              />
+            </a>
+          </Link>
+        </div>
+        <div className='flex-1 px-4 pb-4'>
+          <Link as={`/posts/${slug}`} href='/posts/[slug]'>
+            <a>
+              <h2 className='text-brown font-mont text-2xl lg:text-4xl font-hairline antialiased mb-2'>
+                {title}
+              </h2>
+            </a>
+          </Link>
+          <div className='font-mont text-lg text-black antialiased'>
+            {excerpt}
           </div>
-        </div>
-        <div>
-          <p className='text-lg leading-relaxed mb-4'>{excerpt}</p>
-          {author && <Avatar name={author.name} picture={author.picture} />}
+          <p className='mt-6 text-black font-mont antialiased'><DateComponent dateString={date} /></p>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
+
+export default HeroPost

@@ -1,13 +1,24 @@
 module.exports = {
-  purge: ['./components/**/*.js', './components/**/*.css'],
+  future: {
+    // removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+  },
+  purge: ['./src/**/*.js', './src/**/*.jsx', './src/**/*.ts', './src/**/*.tsx'],
   theme: {
     extend: {
+      fontFamily: {
+        mont: ['Montserrat', 'Arial'],
+        roboto: ['Roboto', 'sans-serif']
+      },
       colors: {
-        'accent-1': '#FAFAFA',
-        'accent-2': '#EAEAEA',
-        'accent-7': '#333',
-        success: '#0070f3',
-        cyan: '#79FFE1'
+        transparent: 'transparent',
+        black: '#42484d',
+        white: '#fff',
+        gray: '#f2f2f2',
+        brown: '#846550',
+        purple: '#85628d',
+        tint: 'rgba(0,0,0,.5)',
+        darkPurple: '#627691'
       },
       spacing: {
         28: '7rem'
@@ -17,17 +28,8 @@ module.exports = {
       },
       lineHeight: {
         tight: 1.2
-      },
-      fontSize: {
-        '5xl': '2.5rem',
-        '6xl': '2.75rem',
-        '7xl': '4.5rem',
-        '8xl': '6.25rem'
-      },
-      boxShadow: {
-        small: '0 5px 10px rgba(0, 0, 0, 0.12)',
-        medium: '0 8px 30px rgba(0, 0, 0, 0.12)'
       }
     }
-  }
+  },
+  plugins: [require('tailwindcss')]
 }

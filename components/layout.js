@@ -10,7 +10,7 @@ export default function Layout ({ preview, children }) {
       <Meta />
       <Nav siteTitle={title || 'Title'} />
       <UpperHeroBar />
-      <div className='min-h-screen'>
+      <div className='min-h-screen bg-gray'>
         <main>{children}</main>
       </div>
       <Footer />

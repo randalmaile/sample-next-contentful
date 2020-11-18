@@ -8,8 +8,9 @@ const UpperHeroBar = () => {
         className='z-0'
         src='/newsroom.jpg'
         alt='Sharp Newsroom'
-        height={250}
-        width={1800}
+        height={140}
+        width={1263}
+        layout='responsive'
       />
     </div>
   )
