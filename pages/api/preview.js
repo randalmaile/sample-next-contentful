@@ -1,13 +1,13 @@
 import { getPreviewPostBySlug } from '../../lib/api'
 
-export default async function preview(req, res) {
-	const { secret, slug } = req.query
+export default async function preview (req, res) {
+  const { secret, slug } = req.query
 
   if (secret !== process.env.CONTENTFUL_PREVIEW_SECRET || !slug) {
     return res.status(401).json({ message: 'Invalid token' })
   }
 
-	// Fetch the headless CMS to check if the provided `slug` exists
+  // Fetch the headless CMS to check if the provided `slug` exists
   const post = await getPreviewPostBySlug(slug)
 
   // If the slug doesn't exist prevent preview mode from being enabled
