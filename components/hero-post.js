@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import Avatar from './avatar'
 import DateComponent from './date'
-import PostBody from './post-body'
 
 const HeroPost = ({
   title,
@@ -13,7 +11,7 @@ const HeroPost = ({
   slug
 }) => {
   return (
-    <div className='mx-4 mb-4 mt-8 z-0 lg:mx-32'>
+    <div className='mx-4 mb-4 mt-8 z-0 lg:mx-12'>
       <div className=' bg-white rounded-md lg:flex md:flex-none'>
         <div className='flex-1'>
           <Link as={`/posts/${slug}`} href='/posts/[slug]'>
